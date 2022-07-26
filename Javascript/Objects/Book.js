@@ -3,11 +3,15 @@ function Book (title, author, pages, isRead) {
     this.author = author
     this.pages = pages
     this.isRead = isRead
+}
 
-    this.getTitle = function(){
-        console.log(title);
-    }
+Book.prototype.info = function(){
+    if (this.isRead)
+        return this.title + " by " + this.author + ", " + this.pages + " pages, not yet read"
+    return this.title + " by " + this.author + ", " + this.pages + " pages, read"
 }
 
 Pokemon = new Book("Pokemon", "Jordan", 22, true)
-Pokemon.getTitle()
+Pokemon2 = new Book("Pokemon2", "Jordan", 22, true)
+console.log(Pokemon.info())
+console.log(Pokemon2.info())
