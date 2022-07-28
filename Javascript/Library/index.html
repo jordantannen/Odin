@@ -18,12 +18,28 @@
     <div class="content">
         <table id="library">
             <tr>
-               <td class="header">Title</td> 
-               <td class="header">Author</td>
-               <td class="header">Pages</td>
+                <th class="header">Title</th>
+                <th class="header">Author</th>
+                <th class="header">Pages</th>
             </tr>
         </table>
+        
     </div>
+    <div class="content" id="overlay">
+        <form>
+            <label for="author">Author:</label><br>
+            <input type="text" id="author"><br>
+            <label for="title">Title:</label><br>
+            <input type="text" id="title"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <div class="bottom">
+        <div class="buttonHolder">
+            <button id="add">Add Book</button>
+        </div>
+    </div>
+    
     <script src="library.js"></script>
 </body>
 </html>
