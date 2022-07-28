@@ -21,7 +21,7 @@ Book.prototype.getPages = function(){
 function addToLibrary(userBook) {
     myLibrary.push(userBook)
     myLibrary.sort()
-    
+
     var libraryTable = document.getElementById("library")
     
     var newRow = libraryTable.insertRow(-1)
@@ -32,9 +32,16 @@ function addToLibrary(userBook) {
 }
 
 let testBook = new Book("Gatsby", "Scott", 200)
-let testBook2 = new Book("Jame", "Scott", 200)
-let testBook3 = new Book("Ape", "Scott", 200)
+let testBook2 = new Book("Jame", "Bob", 240)
+let testBook3 = new Book("Ape", "Tom", 300)
 
 addToLibrary(testBook)
 addToLibrary(testBook2)
 addToLibrary(testBook3)
+
+let addBook = document.getElementById("add")
+let overlay = document.getElementById("overlay")
+
+addBook.addEventListener("click", () => {
+    overlay.style.visibility = 'visible';
+});
