@@ -18,7 +18,8 @@ Book.prototype.getPages = function(){
     return this.pages
 }
 
-function addToLibrary(userBook) {
+function addToLibrary(title, author, pages) {
+    let userBook = new Book(title, author, pages)
     myLibrary.push(userBook)
     myLibrary.sort()
 
@@ -31,17 +32,24 @@ function addToLibrary(userBook) {
 
 }
 
-let testBook = new Book("Gatsby", "Scott", 200)
-let testBook2 = new Book("Jame", "Bob", 240)
-let testBook3 = new Book("Ape", "Tom", 300)
+// let testBook = new Book("Gatsby", "Scott", 200)
+// let testBook2 = new Book("Jame", "Bob", 240)
+// let testBook3 = new Book("Ape", "Tom", 300)
 
-addToLibrary(testBook)
-addToLibrary(testBook2)
-addToLibrary(testBook3)
+// addToLibrary(testBook)
+// addToLibrary(testBook2)
+// addToLibrary(testBook3)
 
 let addBook = document.getElementById("add")
 let overlay = document.getElementById("overlay")
 
 addBook.addEventListener("click", () => {
     overlay.style.visibility = 'visible';
+});
+
+let submitButton = document.getElementById("submit")
+
+submitButton.addEventListener("click", () => {
+    addToLibrary(document.getElementById("title").value, document.getElementById("author").value, document.getElementById("pages").value);
+    overlay.style.visibility = 'hidden';
 });
