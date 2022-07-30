@@ -1,9 +1,10 @@
 let myLibrary = []
 
-function Book(title, author, pages) {
+function Book(title, author, pages, isRead) {
     this.title = title
     this.author = author
     this.pages = pages
+    this.isRead = isRead
 }
 
 Book.prototype.getTitle = function(){
@@ -18,8 +19,15 @@ Book.prototype.getPages = function(){
     return this.pages
 }
 
-function addToLibrary(title, author, pages) {
-    let userBook = new Book(title, author, pages)
+Book.prototype.getReadStatus = function(){
+    return this.isRead
+}
+
+function addToLibrary(title, author, pages, isRead) {
+    console.log(isRead)
+    console.log(title)
+
+    let userBook = new Book(title, author, pages, isRead)
     myLibrary.push(userBook)
     myLibrary.sort()
 
@@ -30,6 +38,18 @@ function addToLibrary(title, author, pages) {
     newRow.insertCell(0).innerHTML = userBook.getTitle()
     newRow.insertCell(1).innerHTML = userBook.getAuthor()
     newRow.insertCell(2).innerHTML = userBook.getPages()
+
+    let readBox = document.createElement("INPUT")
+    readBox.setAttribute("type", "checkbox")
+    newRow.append(readBox)
+    
+    
+    if (userBook.getReadStatus()){
+        readBox.checked = true
+        console.log(userBook.getReadStatus())
+    }
+
+    readBox.onclick = () => 
     
     let deleteButton = document.createElement("button")
     deleteButton.innerHTML = "Remove"
@@ -48,7 +68,15 @@ addBook.addEventListener("click", () => {
 let submitButton = document.getElementById("submit")
 
 submitButton.addEventListener("click", () => {
-    addToLibrary(document.getElementById("title").value, document.getElementById("author").value, document.getElementById("pages").value);
+    let isRead = false
+    console.log(isRead)
+    if (document.getElementById("isRead").checked)
+        isRead = true
+    console.log(isRead)
+    addToLibrary(document.getElementById("title").value, 
+        document.getElementById("author").value, 
+        document.getElementById("pages").value,
+        isRead);
     overlay.style.visibility = 'hidden';
 });
 
