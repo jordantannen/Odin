@@ -23,6 +23,10 @@ Book.prototype.getReadStatus = function(){
     return this.isRead
 }
 
+Book.prototype.changeReadStatus = function(status){
+    this.isRead = status
+}
+
 function addToLibrary(title, author, pages, isRead) {
     console.log(isRead)
     console.log(title)
@@ -49,12 +53,28 @@ function addToLibrary(title, author, pages, isRead) {
         console.log(userBook.getReadStatus())
     }
 
-    readBox.onclick = () => 
+    readBox.onclick = () => {
+        if (readBox.checked == true)
+        {
+            myLibrary[newRow.id].changeReadStatus(true)
+            console.log("test")
+        }
+        else
+        {
+            myLibrary[newRow.id].changeReadStatus(false)
+            console.log("test2")
+        }
+
+    }
+    
     
     let deleteButton = document.createElement("button")
     deleteButton.innerHTML = "Remove"
     newRow.append(deleteButton)
-    deleteButton.onclick = () => newRow.remove()
+    deleteButton.onclick = () => {
+        newRow.remove()
+        myLibrary.splice(newRow.id, 1)
+    }
 
 }
 
