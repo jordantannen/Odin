@@ -42,6 +42,7 @@ function Zombie(name) {
 const jeff = new Zombie('Jeff')
 
 console.log(jeff.eatBrain())
+console.log(jeff.name)
 
 const monkey = (name => {
     const makeSound = () => {return 'Monkey noise'}

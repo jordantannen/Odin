@@ -12,41 +12,31 @@ function gameBoard() {
         }
     }
 
-    this.addMark = function(mark) {
-
+    this.addMark = function() {
+        let lastMark = "X"
         for (const box of this.board) {
             box.parentElement.addEventListener("click", function(){
-                box.innerHTML = mark
-            })
+                box.innerHTML = lastMark
+                lastMark = (lastMark == "O") ? "X" : "O"
+            }, {once : true})
         }
     }
 
 }
 
-function player(name, mark) {
+function player(name) {
     this.name = name
-    this.mark = mark
 }
 
 function gameManager(){
     // Create new game board
-    const board = new gameBoard()
-    board.newBoard()
-    
-    const playerOne = new player("Jordan", "X")
-    const playerTwo = new player("Ben", "O")
+    const managerBoard = new gameBoard()
+    managerBoard.newBoard()
 
-    board.addMark("J")
-    // let playerOneTurn = true
+    const playerOne = new player("Jordan")
+    const playerTwo = new player("Ben")
 
-    // for (let i = 0; i < 10; i++){
-
-    // }
+    managerBoard.addMark()
 }
 
 gameManager()
-
-// const testBoard = new gameBoard();
-
-// testBoard.newBoard();
-// testBoard.addMark(testBoard.board[2], "P")
