@@ -1,0 +1,23 @@
+.alignCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+
+.gridContainer {
+
+}
+
+.gridBox {
+    border: black 2px solid;
+    border-radius: 25px;
+    padding: 25px;
+    height: 100px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.gridBox:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
