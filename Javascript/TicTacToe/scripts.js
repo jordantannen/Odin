@@ -54,6 +54,15 @@ function gameBoard() {
             winDisplay(board, board[0], board[4], board[8])
         else if ((board[2].innerHTML == board[4].innerHTML && board[2].innerHTML == board[6].innerHTML) && board[4].innerHTML != "")
             winDisplay(board, board[2], board[4], board[6])
+        else{
+            let fullBoxes = 0;
+            for (const item of board) {
+                if (item.innerHTML != "")
+                    fullBoxes++
+            }
+            if (fullBoxes == 9)
+                winDisplay(board)
+        }
     }
 
     winDisplay = function(board, ...args){
