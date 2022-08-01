@@ -4,10 +4,6 @@
     align-items: center;   
 }
 
-.gridContainer {
-
-}
-
 .gridBox {
     border: black 2px solid;
     border-radius: 25px;
@@ -20,4 +16,38 @@
 
 .gridBox:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+}
+
+.selected, .selected:hover {
+    cursor: not-allowed;
+}
+
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gameOver {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    font-size: 5vw;
+    font: bold;
 }
