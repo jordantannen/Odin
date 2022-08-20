@@ -7,7 +7,7 @@ export default function Card(props){
             <div className="info">
                 <div className="location">
                     <p>{props.location}</p>
-                    <a href={props.googleMapsUrl}></a>
+                    <a href={props.googleMapsUrl}>View on Google Maps</a>
                 </div>
                 <h3>{props.title}</h3>
                 <p className="dates">{props.startDate} - {props.endDate}</p>

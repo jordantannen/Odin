@@ -3,17 +3,15 @@
 }
 
 .headerBox {
-  position: absolute;
-  width: 550px;
-  height: 55px;
-  left: 0px;
-  top: 0px;
-
-  background: #F55A5A;
+  background-color: #F55A5A;
+  color: #fff;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .headerBox > p {
-  position: absolute;
   width: 109px;
   height: 16px;
   left: 225px;
@@ -49,11 +47,16 @@
 .info {
   display: flex;
   flex-direction: column;
-  border: solid 2px black;
+  /* border: solid 2px black; */
 }
 
 .info > * {
   margin-right: auto;
+}
+
+.location {
+  display: flex;
+  align-items: center;
 }
 
 .location > p {
@@ -76,7 +79,7 @@
 .location > a {
   /* position: absolute; */
   width: 106px;
-  height: 13px;
+  height: 10px;
   left: 279px;
   top: 316px;
 
@@ -93,11 +96,11 @@
 }
 
 h3 {
-  /* position: absolute; */
-  /* width: 326px;
+  position: absolute;
+  width: 326px;
   height: 33px;
-  left: 184px;
-  top: 333px; */
+  left: 116px;
+  /* top: 333px; */
 
   font-family: 'Inter';
   font-style: normal;
@@ -109,11 +112,12 @@ h3 {
 }
 
 .dates {
-  /* position: absolute; */
-  width: 319px;
+  position: relative;
+  /* width: 319px; */
   height: 11px;
-  left: 184px;
-  top: 380px;
+  left: 16px;
+  /* top: 380px; */
+  padding-top: 18px;
 
   font-family: 'Inter';
   font-style: normal;
@@ -131,13 +135,14 @@ h3 {
   left: 184px;
   top: 400px;
 
+  padding-left: 15px;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 10.24px;
   line-height: 150%;
   /* or 15px */
-
+  text-align: left;
 
   color: #2B283A;
 }
